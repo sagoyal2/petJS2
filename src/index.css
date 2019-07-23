@@ -11,3 +11,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button{
+  border-radius: 4px;
+  background-color: rgb(11, 190, 20);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#ishere{
+  position: absolute;
+  top:452px;
+  left: 85px   
+}
+
+/* #nothere{
+  background-color: rgb(190, 11, 80);
+  position: absolute;
+  top:700px;
+  left: 85px   
+} */
+
+/*
+var sheet = (function() {
+	// Create the <style> tag
+	var style = document.createElement("style");
+
+	// Add a media (and/or media query) here if you'd like!
+	// style.setAttribute("media", "screen")
+	// style.setAttribute("media", "only screen and (max-width : 1024px)")
+
+	// WebKit hack :(
+	style.appendChild(document.createTextNode(""));
+
+	// Add the <style> element to the page
+	document.head.appendChild(style);
+
+	return style.sheet;
+})();
+*/
+
+/*
+document.getElementById("nothere").setAttribute("style", "background-color: rgb(190, 11, 80);position: absolute;top:700px;left: 85px;");
+*/
+
+/*
+sheet.addRule("#nothere", "background-color: rgb(190, 11, 80);position: absolute;top:700px;left: 85px;", 0);
+*/
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
