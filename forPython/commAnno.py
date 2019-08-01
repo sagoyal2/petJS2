@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 def main():
 
-    page_link = "https://en.wikipedia.org/wiki/Pasta"
+    page_link = "https://randyzwitch.com/"
 
     page_response = requests.get(page_link, timeout=5)
     soup = BeautifulSoup(page_response.content, "html.parser")
@@ -14,10 +14,11 @@ def main():
     # file1.write(str(soup.prettify))
     # file1.close()
 
-    result = soup.find_all(
-        'div', {"class": re.compile(r'nav\w+')})
+    # result = soup.find_all(
+    #     'div', {"class": re.compile(r'nav\w+')})
 
-    print(result[0])
+    mylist = [(tag.name, tag.attrs) for tag in soup.find_all()]
+    print(mylist)
 
 
 if __name__ == "__main__":
